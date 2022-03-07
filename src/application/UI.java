@@ -1,6 +1,7 @@
 package application;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -47,7 +48,7 @@ public class UI {
 			return new ChessPosition(column, row);
 		}
 		catch (RuntimeException e) {
-			throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
+			throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8:");
 		}
 		
 	}
